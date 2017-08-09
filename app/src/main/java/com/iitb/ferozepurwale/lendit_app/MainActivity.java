@@ -1,7 +1,7 @@
-package com.example.sarthak.lendit_app;
+package com.iitb.ferozepurwale.lendit_app;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 

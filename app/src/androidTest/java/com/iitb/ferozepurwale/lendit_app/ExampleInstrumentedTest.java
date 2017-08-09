@@ -1,4 +1,4 @@
-package com.example.sarthak.lendit_app;
+package com.iitb.ferozepurwale.lendit_app;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
