@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">LendIt-App</string>
+    <string name="facebook_app_id">1923832081275541</string>
+
 </resources>
