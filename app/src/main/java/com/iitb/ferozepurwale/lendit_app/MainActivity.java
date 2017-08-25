@@ -3,6 +3,7 @@ package com.iitb.ferozepurwale.lendit_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.CallbackManager;
@@ -23,11 +24,16 @@ public class MainActivity extends AppCompatActivity {
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
         loginButton = (LoginButton)findViewById(R.id.fb_login_id);
-        textView = (TextView)findViewById(R.id.status);
+        TextView skipButton = (TextView)findViewById(R.id.skip_button);
+        //textView = (TextView)findViewById(R.id.status);
         callbackManager = CallbackManager.Factory.create();
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult loginResult) {
+                Intent main_to_home=new Intent(MainActivity.this , HomeActivity.class);
+                main_to_home.putExtra("logged_in",true);
+                main_to_home.putExtra("user_id",loginResult.getAccessToken().getUserId());
+                startActivity(main_to_home);
                 //textView.setText(loginResult.getAccessToken().getUserId());
             }
 
@@ -39,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onError(FacebookException error) {
                 textView.setText("Error");
+            }
+        });
+
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent main_to_home=new Intent(MainActivity.this , HomeActivity.class);
+                main_to_home.putExtra("logged_in",false);
+                startActivity(main_to_home);
             }
         });
     }
