@@ -13,7 +13,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         TextView nameView = (TextView)findViewById(R.id.name);
         Bundle from_main = getIntent().getExtras();
-        boolean logged_in = from_main.getBoolean("logged_in");;
+        boolean logged_in = from_main.getBoolean("logged_in");
         if (!logged_in)
             nameView.setText("Guest");
         else {
