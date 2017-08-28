@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
         loginButton = (LoginButton)findViewById(R.id.fb_login_id);
         final TextView skipButton = (TextView)findViewById(R.id.skip_button);
